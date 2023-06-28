@@ -28,15 +28,15 @@ section {
 /* The score section is a flex container with items evenly spaced horizontally and centered vertically */
 
 .score h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .score p {
-  padding: 0.6rem;
+  padding: 1.5rem 0;
   text-align: center;
   font-size: 1.5rem;
 }
 .intro {
-  height: 50vh;
+  height: 70vh;
   color: rgba(224, 224, 224, 0.8);
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ section {
 }
 .intro button,
 .match button {
-  height: 3rem;
+  height: 6rem;
   width: 9rem;
   background: none;
   border: none;
@@ -60,7 +60,7 @@ section {
   color: rgba(224, 224, 224, 0.8);
   font-size: 1.25rem;
   text-shadow: 0 0 10px #eeeeee;
-  background: rgb(46, 120, 99, 0);
+  background: transparent;
   cursor: pointer;
 }
 .match {
@@ -68,13 +68,17 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 500ms ease, 500ms;
+  transition: opacity 500ms ease;
 }
+/* Positions the match section fixed in the middle of the viewport */
+
 .winner {
   color: rgba(255, 234, 0, 0.8);
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px #ffff00;
+  margin: 1.25rem 0;
+  height: 25vh;
 }
 .hands,
 .options {
