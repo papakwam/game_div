@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Resets margin, padding, and box-sizing for all elements */
+
+body {
+  font-family: "Dancing Script", sans-serif;
+}
+section {
+  height: 100vh;
+  background-color: rgba(0, 128, 128, 0.768);
+}
+/* Sets the height to 100% of the viewport height and the background color to a semi-transparent teal */
+
+.score {
+  height: 20vh;
+  color: rgba(255, 234, 0, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-shadow: 0 0 10px #ffff00;
+}
+/* Sets the height to 20% of the viewport height and styles for the score section */
+/* The score section is a flex container with items evenly spaced horizontally and centered vertically */
+
+.score h2 {
+  font-size: 1.8rem;
+}
+.score p {
+  padding: 0.6rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.intro {
+  height: 50vh;
+  color: rgba(224, 224, 224, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: ease 500ms opacity;
+}
+/* Sets the height to 50% of the viewport height and styles for the intro section */
+/* The intro section is a flex container with items vertically centered and evenly spaced */
+
+.intro h1 {
+  font-size: 3rem;
+}
+.intro button,
+.match button {
+  height: 3rem;
+  width: 9rem;
+  background: none;
+  border: none;
+  border-radius: 3%;
+  color: rgba(224, 224, 224, 0.8);
+  font-size: 1.25rem;
+  text-shadow: 0 0 10px #eeeeee;
+  background: rgb(46, 120, 99, 0);
+  cursor: pointer;
+}
+.match {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 500ms ease, 500ms;
+}
+.winner {
+  color: rgba(255, 234, 0, 0.8);
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px #ffff00;
+}
+.hands,
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* Both sections are flex containers with items evenly spaced horizontally and centered vertically */
+
+.player-hand {
+  transform: scaleX(-1);
+}
+/* Flips the player-hand element horizontally using scaleX */
