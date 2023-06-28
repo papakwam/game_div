@@ -23,6 +23,7 @@ section {
   justify-content: space-around;
   align-items: center;
   text-shadow: 0 0 10px #ffff00;
+  margin-bottom: 50px;
 }
 /* Sets the height to 20% of the viewport height and styles for the score section */
 /* The score section is a flex container with items evenly spaced horizontally and centered vertically */
@@ -75,6 +76,7 @@ section {
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px #ffff00;
+  margin: 20px 0;
 }
 .hands,
 .options {
