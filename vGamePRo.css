@@ -17,7 +17,7 @@ section {
 /* Sets the height to 100% of the viewport height and the background color to a semi-transparent teal */
 
 .score {
-  height: 20vh;
+  height: 25vh;
   color: rgba(255, 234, 0, 0.8);
   display: flex;
   justify-content: space-around;
