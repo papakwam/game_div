@@ -23,6 +23,7 @@ section {
   justify-content: space-around;
   align-items: center;
   text-shadow: 0 0 10px #ffff00;
+  margin-bottom: 50px;
 }
 /* Sets the height to 20% of the viewport height and styles for the score section */
 /* The score section is a flex container with items evenly spaced horizontally and centered vertically */
@@ -58,7 +59,8 @@ section {
   border: none;
   border-radius: 3%;
   color: rgba(224, 224, 224, 0.8);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
   text-shadow: 0 0 10px #eeeeee;
   background: transparent;
   cursor: pointer;
@@ -92,3 +94,39 @@ section {
   transform: scaleX(-1);
 }
 /* Flips the player-hand element horizontally using scaleX */
+
+/* "shakePlayer" rotates and shakes an element vertically.
+  "shakeComputer" shakes an element vertically.
+
+  These animations create a shaking effect by applying transformations at specific percentages of the animation timeline.
+*/
+@keyframes shakePlayer {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  15%,
+  35%,
+  65%,
+  85% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+}
+@keyframes shakeComputer {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0px);
+  }
+  15%,
+  35%,
+  65%,
+  85% {
+    transform: translateY(-50px);
+  }
+}
