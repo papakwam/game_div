@@ -9,6 +9,8 @@
 
 body {
   font-family: "Dancing Script", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 section {
   height: 100vh;
@@ -85,15 +87,24 @@ section {
 .hands,
 .options {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
-/* Both sections are flex containers with items evenly spaced horizontally and centered vertically */
 
 .player-hand {
   transform: scaleX(-1);
 }
 /* Flips the player-hand element horizontally using scaleX */
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
 
 /* "shakePlayer" rotates and shakes an element vertically.
   "shakeComputer" shakes an element vertically.
