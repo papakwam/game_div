@@ -1,141 +1,95 @@
-let winners = []; //Array to store winners
-const choices = ["rock", "paper", "scissors"]; //Array of choices
+// Array to store the winners
+let winners = [];
 
+// Array of choices
+const choices = ["rock", "paper", "scissors"];
+
+// Function to reset the game
 function resetGame() {
+  // Clear the winners array
   winners = [];
+
+  // Reset the scores and hands in the HTML
   document.querySelector(".player-score p").textContent = "0";
   document.querySelector(".computer-score p").textContent = "0";
   document.querySelector(".winner").textContent = "";
   document.querySelector(".player-hand").src = "./assets/rock.png";
   document.querySelector(".computer-hand").src = "./assets/rock.png";
-  document.querySelector(".match").classList.add("fadeOut");
-}
-// Reset the scores and hands in the HTML
 
+  // Add fade out effect to the match section
+  let matchday = document.querySelector(".match")
+  matchday.classList.add("fadeOut");
+}
+
+// Function to start the game
 function startGame() {
+// this adds sound to the game after the 'start game' is clicked on and the game starts till the round ends
+    var sound = new Howl({
+        src: ['./assets/finalsound.mp3']
+      });
+
+      
+  // Hide the intro and remove fade out effect from the match section when the button is clicked
   document.querySelector(".intro button").addEventListener("click", () => {
-    document.querySelector(".intro").style.display = "none";
+    let introScreen = document.querySelector(".intro").style.display = "none";
     document.querySelector(".match").classList.remove("fadeOut");
+
+    sound.play()
+  });
+
+  // Add event listeners to the buttons for player's choices
+  const buttons = document.querySelectorAll(".options button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      playRound(button.classList[0]);
+    });
   });
 }
 
-const game = () =>{
-    let pScore = 0;
-    let cScore =0; 
-    
-   
-    const startGame = () => {
-        const playBtn = document.querySelector('.intro button');
-        const introScreen = document.querySelector('.intro');
-        const match = document.querySelector('.match')
+// Function to play a round
+function playRound(playerChoice) {
+  // Check if any player has already won
+  // also reloads the start game screen after 5 tries.
+  let wins = checkWins();
 
+  if (wins >= 5) {
+  const introScreen = document.querySelector(".intro");
+  const matchScreen = document.querySelector(".match");
 
-        playBtn.addEventListener('click', ()=>{
-            introScreen.classList.add('fadeOut');
-            match.classList.add('fadeIn')
-        })
-    }
-
-const playMatch = () => {
-  
-    const options = document.querySelectorAll('.options button');
-    const playerHand = document.querySelector('.player-hand');
-    const computerHand = document.querySelector('.computer-hand')
-
-    const computerOptions = ['rock', 'paper', 'scissors'];
-    
-
-options.forEach(options =>{ 
-    options.addEventListener('click', function(){
-        var sound = new Howl({
-            src: ['./assets/rock-sound.mp3']
-          });
-        sound.play()
-        const computerNum= Math.floor(Math.random()*3);
-        const computerChoice = computerOptions[computerNum];
-    const playerChoice = options.textContent;
-        compareHands(playerChoice,computerChoice)
-
-        playerHand.src=`./assets/${playerChoice}.png`;
-        computerHand.src=`./assets/${computerChoice}.png`;
-
-
-    })
-} )
-
-
-}
-
-const updateScore = () => {
-     let playerScore = document.querySelector('.player-score p');
-     let computerScore = document.querySelector('.computer-score p')
-     playerScore.textContent = pScore
-     computerScore.textContent = cScore
-    }
-
-
-const compareHands = (playerChoice,computerChoice) => {
-    const winner = document.querySelector('.winner')
-if (playerChoice === computerChoice) {
-    winner.textContent = 'It is a tie';
-    return;
-}
-if (playerChoice === 'rock') {
-    if (computerChoice === 'scissors') {
-        winner.textContent = 'Player wins!'
-        pScore++
-        updateScore()
-        return;
-    } else {
-        winner.textContent = 'Computer wins!'
-        cScore++
-        updateScore()
-        return
-    }
-    
-}
-if (playerChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-        winner.textContent = 'Computer wins!'
-        cScore++
-        updateScore()
-        return;
-    } else {
-        winner.textContent = 'Player wins!'
-        pScore++
-        updateScore()
-        return
-    }
-} 
-if (playerChoice === 'scissors') {
-    
-if (computerChoice === 'rock') {
-        winner.textContent = 'Computer wins!'
-        cScore++
-        updateScore()
-        return;
-    } else {
-        winner.textContent = 'Player wins!'
-        pScore++
-        updateScore()
-        return
-    }
-
-} 
-
-
-
+  introScreen.style.display = "flex";
+  matchScreen.style.display = "none";
+  resetGame(); // Reset the game when reaching 5 wins
+//incomplete, please try hands on to see!
+  return;
 }
 
 
+  // Get the computer's choice
+  const computerChoice = getComputerChoice();
+
+  // Update the hands with the choices
+  updateHands(playerChoice, computerChoice);
+
+  // Determine the winner of the round
+  const winner = getWinner(playerChoice, computerChoice);
+
+  // Update the score and display the result
+  updateScore(winner);
+
+  // Reset the hands after a delay
+  setTimeout(() => {
+    resetHands();
+  }, 2000);
+//plays a sound at the click of a game button
+  var sound = new Howl({
+    src: ['./assets/rock-sound.mp3']
+  });
+
+  sound.play()
+}
+
+
+
+// Reset the game and start it
+resetGame();
 startGame();
-playMatch();
-
-
-
-
-}
-game()
-
-
-
