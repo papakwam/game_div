@@ -13,8 +13,24 @@ function resetGame() {
 // Reset the scores and hands in the HTML
 
 function startGame() {
+  // Hide the introduction and remove fadeOut class from match element
   document.querySelector(".intro button").addEventListener("click", () => {
     document.querySelector(".intro").style.display = "none";
     document.querySelector(".match").classList.remove("fadeOut");
   });
+
+  // Add click event listeners to option buttons
+  const buttons = document.querySelectorAll(".options button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      playRound(button.classList[0]);
+    });
+  });
 }
+
+function playRound(playerChoice) {
+  let wins = checkWins();
+  if (wins >= 5) {
+    return;
+  }
+} // person 2 should remove this bracket before proceeding...
