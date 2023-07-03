@@ -39,3 +39,6 @@ function playRound(playerChoice) {
     return;
   }
 }
+
+resetGame()
+startGame()
