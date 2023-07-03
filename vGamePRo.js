@@ -10,21 +10,18 @@ function resetGame() {
   document.querySelector(".computer-hand").src = "./assets/rock.png";
   document.querySelector(".match").classList.add("fadeOut");
 }
-// Reset the scores and hands in the HTML
 
 function startGame() {
-  // Hide the introduction and remove fadeOut class from match element
   document.querySelector(".intro button").addEventListener("click", () => {
     document.querySelector(".intro").style.display = "none";
     document.querySelector(".match").classList.remove("fadeOut");
     var sound = new Howl({
-              src: ['./assets/finalsound.mp3']
-               });
-
-               sound.play()
-  
+      src: ['./assets/finalsound.mp3'],
+      html5: true
+    });
+    sound.play();
   });
-  // Add click event listeners to option buttons
+
   const buttons = document.querySelectorAll(".options button");
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -34,26 +31,39 @@ function startGame() {
 }
 
 function playRound(playerChoice) {
-  let wins = checkWins();
-  if (wins >= 5) {
-    return;
+  const computerChoice = getComputerChoice();
+  const playerHand = document.querySelector(".player-hand");
+  const computerHand = document.querySelector(".computer-hand");
+
+  playerHand.src = `./assets/${playerChoice}.png`;
+  computerHand.src = `./assets/${computerChoice}.png`;
+
+  if (playerChoice === computerChoice) {
+    document.querySelector(".winner").textContent = "It's a tie!";
+  } else if (
+    (playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "paper" && computerChoice === "rock") ||
+    (playerChoice === "scissors" && computerChoice === "paper")
+  ) {
+    document.querySelector(".winner").textContent = "You win!";
+    updateScore(".player-score p");
+  } else {
+    document.querySelector(".winner").textContent = "Computer wins!";
+    updateScore(".computer-score p");
   }
 }
+
 function getComputerChoice() {
-    // Generate a random index to select a choice from the choices array
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
-  }
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+}
 
-function updateHands(playerChoice, computerChoice) {
-    document.querySelector(".player-hand").src = `./assets/${playerChoice}.png`;
-    document.querySelector(".computer-hand").src = `./assets/${computerChoice}.png`;
-   }
-   
-   function resetHands() {
-    document.querySelector(".player-hand").src = "./assets/rock.png";
-    document.querySelector(".computer-hand").src = "./assets/rock.png";
-   }
+function updateScore(scoreSelector) {
+  const scoreElement = document.querySelector(scoreSelector);
+  let score = parseInt(scoreElement.textContent);
+  score++;
+  scoreElement.textContent = score.toString();
+}
 
-resetGame()
-startGame()
+resetGame();
+startGame();
