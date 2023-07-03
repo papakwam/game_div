@@ -34,29 +34,8 @@ function startGame() {
 }
 
 function playRound(playerChoice) {
-    let wins = checkWins();
-    if (wins >= 5) {
-      return;
-    }
-  
-    const computerChoice = getComputerChoice();
-    updateHands(playerChoice, computerChoice);
-    const winner = getWinner(playerChoice, computerChoice);
-    updateScore(winner);
-  
-    // Reset the hands after a delay of 2000ms (2 seconds)
-    setTimeout(() => {
-      resetHands();
-    }, 2000);
+  let wins = checkWins();
+  if (wins >= 5) {
+    return;
   }
-  
-  function getComputerChoice() {
-    // Generate a random index to select a choice from the choices array
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
-  }
-  
-  
-  // Return the number of wins recorded in the winners array
-  resetGame();
-  startGame();
+}
