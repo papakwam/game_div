@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./vGamePRo.css" />
     <title>Rock Paper Scissors</title>
   </head>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
   <body>
     <section class="game">
+      
       <div class="score">
         <div class="player-score">
           <h2>Player</h2>
@@ -22,25 +24,31 @@
         </div>
       </div>
 
-      <div class="intro">
-        <h1 style="font-family: Roboto, sans-serif">Rock - Paper - Scissors</h1>
-        <button>START GAME</button>
+    <div class="intro">
+
+      <h1>Rock Paper and Scissors</h1>
+      <button>START GAME</button>
+
+    </div>
+
+    <div class="match fadeOut">
+
+      <h2 class="winner">Choose an option</h2>
+      <div class="hands">
+        <img class="player-hand" src="./assets/rock.png" alt="" />
+        <img class="computer-hand" src="./assets/rock.png" alt="" />
+      </div>
+      <div class="options">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
       </div>
 
-      <div class="match fadeOut">
-        <h2 class="winner">Choose An Option</h2>
-        <div class="hands">
-          <img class="player-hand" src="./assets/rock.png" alt="" />
-          <img class="computer-hand" src="./assets/rock.png" alt="" />
-        </div>
-        <div class="options">
-          <button class="rock">Rock</button>
-          <button class="paper">Paper</button>
-          <button class="scissors">Scissors</button>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <script src="vGamePRo.js"></script>
-  </body>
+  <script src="vGamePRo.js"></script>
+
+</body>
+
 </html>
