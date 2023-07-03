@@ -33,4 +33,4 @@ function playRound(playerChoice) {
   if (wins >= 5) {
     return;
   }
-} // person 2 should remove this bracket before proceeding...
+}
