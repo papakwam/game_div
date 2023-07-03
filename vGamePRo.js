@@ -39,6 +39,11 @@ function playRound(playerChoice) {
     return;
   }
 }
+function getComputerChoice() {
+    // Generate a random index to select a choice from the choices array
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+  }
 
 resetGame()
 startGame()
