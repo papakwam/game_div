@@ -90,7 +90,16 @@ function updateScore(scoreSelector, competitor) {
     // reset game
     resetGame();
   }
+  //Display Reset Button 
+  if (winners.length >=5){
+    document.querySelector(".reset").style.display ="block";
+  }
 }
+//Return the number of wins recorded in the winner array
+ function checkwins(){
+return winners.length;
+ }
 
 
+resetGame();
 startGame();
