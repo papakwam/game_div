@@ -91,14 +91,14 @@ function updateScore(scoreSelector, competitor) {
     resetGame();
   }
   //Display Reset Button 
-  if (winners.length >=5){
-    document.querySelector(".reset").style.display ="block";
-  }
+  // if (winners.length >=5){
+  //   document.querySelector(".reset").style.display ="block";
+  // }
 }
 //Return the number of wins recorded in the winner array
- function checkwins(){
-return winners.length;
- }
+//  function checkwins(){
+// return winners.length;
+//  }
 
 
 resetGame();
