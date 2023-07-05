@@ -19,8 +19,8 @@ section {
   background-image: url(https://images.unsplash.com/photo-1687372626415-6f98c4eb4cd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; 
-  background-color: rgba(0, 128, 128, 0.768); 
+  background-position: center;
+  background-color: rgba(0, 128, 128, 0.768);
 }
 /* Sets the height to 100% of the viewport height and the background color to a semi-transparent teal */
 
@@ -34,11 +34,11 @@ section {
   margin-bottom: 50px;
 
   /* remove this section if uncomfortable with background editing  */
-   background: url(https://images.unsplash.com/photo-1505160984683-51670af82409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvY2slMjBwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
+  background: url(https://images.unsplash.com/photo-1505160984683-51670af82409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvY2slMjBwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
   background-attachment: fixed;
- 
+
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 /* Sets the height to 20% of the viewport height and styles for the score section */
 /* The score section is a flex container with items evenly spaced horizontally and centered vertically */
@@ -59,12 +59,12 @@ section {
   align-items: center;
   justify-content: space-around;
   transition: ease 500ms opacity;
-   /* remove this section if uncomfortable with background editing */
-   
-   background: url(https://images.unsplash.com/photo-1505160984683-51670af82409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvY2slMjBwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
+  /* remove this section if uncomfortable with background editing */
+
+  background: url(https://images.unsplash.com/photo-1505160984683-51670af82409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvY2slMjBwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 /* Sets the height to 50% of the viewport height and styles for the intro section */
 /* The intro section is a flex container with items vertically centered and evenly spaced */
@@ -92,18 +92,17 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: opacity 500ms ease;
- 
 }
 
 /* Positions the match section fixed in the middle of the viewport */
 
 .winner {
-  color: rgba(255, 234, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-size: 3rem;
-  text-shadow: 0 0 10px #ffff00;
+  text-shadow: 0 0 10px #f2c6ff;
   margin: 1.25rem 0;
-  height: 25vh;
+  height: 30vh;
 }
 .hands,
 .options {
@@ -114,7 +113,6 @@ section {
 
 .player-hand {
   transform: scaleX(-1);
- 
 }
 /* Flips the player-hand element horizontally using scaleX */
 
