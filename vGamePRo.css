@@ -44,12 +44,12 @@ section {
 /* The score section is a flex container with items evenly spaced horizontally and centered vertically */
 
 .score h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .score p {
   padding: 1.5rem 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .intro {
   height: 70vh;
@@ -70,7 +70,7 @@ section {
 /* The intro section is a flex container with items vertically centered and evenly spaced */
 
 .intro h1 {
-  font-size: 3rem;
+  font-size: 5rem;
 }
 .intro button,
 .match button {
@@ -80,7 +80,7 @@ section {
   border: none;
   border-radius: 3%;
   color: rgba(224, 224, 224, 0.8);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   text-shadow: 0 0 10px #eeeeee;
   background: transparent;
@@ -99,7 +99,7 @@ section {
 .winner {
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   text-shadow: 0 0 10px #f2c6ff;
   margin: 1.25rem 0;
   height: 30vh;
