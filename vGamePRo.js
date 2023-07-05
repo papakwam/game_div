@@ -83,7 +83,7 @@ function updateScore(scoreSelector, competitor) {
       document.querySelector(".intro > h1").textContent = "YOU WON!!!!";
     }
     else {
-      document.querySelector(".intro > h1").textContent = "YOU LOST!!!!";
+      document.querySelector(".intro > h1").textContent = "Coomputer  Wins!!!!";
     }
 
 
