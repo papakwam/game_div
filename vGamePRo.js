@@ -3,6 +3,7 @@ let playerNumberOfWins = 0; // Current number of wins for the player
 let computerNumberOfWins = 0; //Current number of wins for Computer
 const choices = ["rock", "paper", "scissors"]; //Array of choices
 
+
 function resetGame() {
   winners = [];
   document.querySelector(".player-score p").textContent = "0";
@@ -29,6 +30,9 @@ function startGame() {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       playRound(button.classList[0]);
+      // setTimeout
+      setTimeout(()=>{document.querySelector(".player-hand").src = "./assets/rock.png";
+      document.querySelector(".computer-hand").src = "./assets/rock.png";},3000)
     });
   });
 }
@@ -81,9 +85,11 @@ function updateScore(scoreSelector, competitor) {
     //first player to reach 5 wins  is the winner!!
     if (playerNumberOfWins > computerNumberOfWins) {
       document.querySelector(".intro > h1").textContent = "YOU WON!!!!";
+
+      // gif.style.visible
     }
     else {
-      document.querySelector(".intro > h1").textContent = "Coomputer  Wins!!!!";
+      document.querySelector(".intro > h1").textContent = "Computer  Wins!!!!";
     }
 
 
