@@ -53,7 +53,7 @@ function startGame() {
   const buttons = document.querySelectorAll(".options button");
 
 
-  
+
   // Adds click event listeners to each button
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -119,7 +119,6 @@ function updateScore(scoreSelector, competitor) {
   // Parse the current score from the score element's text content and increment it by 1
   let score = parseInt(scoreElement.textContent);
   score++;
-
   // Updates the number of wins for the player or the computer based on the competitor
   if (competitor === "player") {
     playerNumberOfWins = score;
@@ -138,7 +137,7 @@ function updateScore(scoreSelector, competitor) {
     if (playerNumberOfWins > computerNumberOfWins) {
       document.querySelector(".intro > h1").textContent = "You Won!!!";
 
-      // gif.style.visible
+      
     } else {
       document.querySelector(".intro > h1").textContent = "Computer  Won!!!";
     }
@@ -147,5 +146,4 @@ function updateScore(scoreSelector, competitor) {
     resetGame()
   }
 }
-resetGame();
 startGame();
