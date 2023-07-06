@@ -142,7 +142,8 @@ function updateScore(scoreSelector, competitor) {
     }
 
     // Resets the game and starts a new game
-    resetGame();
-    startGame();
+    resetGame()
   }
 }
+resetGame();
+startGame();
