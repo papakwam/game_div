@@ -52,6 +52,8 @@ function startGame() {
   // Selects all the buttons in the options section
   const buttons = document.querySelectorAll(".options button");
 
+
+  
   // Adds click event listeners to each button
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
